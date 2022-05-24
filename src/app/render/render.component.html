@@ -1,0 +1,22 @@
+hello
+<div class="flexbox-container" style="display:flex;">
+    <div class="sidebar" style="flex:1;">
+        <div class="card" style="width: 20rem; margin-left: 20px; margin-top: 5px;">
+            <div class="card-body">
+                <h3 style="margin-left: 20px;">{{due}} Tasks</h3>
+                <div *ngFor="let item of List">
+                    <div class="card" style="width: 18rem; margin-top: 10px;" *ngIf="item.status==='pending'">
+                        <div class="card-body">
+                            <h6 class="card-title"><b>Task Title: </b>{{item.taskTitle}}</h6>
+                            <h6 class="card-subtitle mb-2 text-muted"><b>Due Date:
+                                </b>{{item.dueDate.toDateString()}}</h6>
+                            <p class="card-text"><b>Desciption: </b>{{item.taskData}}</p>
+                        </div>
+                        <!-- <button type="button" class="btn btn-success" (click)="done(item.taskId)">Mark as
+                            Done</button> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
